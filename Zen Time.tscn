@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Zen Time.gd" type="Script" id=1]
+[ext_resource path="res://resources/World/BlackGround.png" type="Texture" id=2]
+[ext_resource path="res://resources/Sounds/Zen Runner Gong.wav" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+
+[node name="Zen Time" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="BlackGround" type="Sprite" parent="."]
+position = Vector2( 161, 91 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 79.0
+margin_top = 49.0
+margin_right = 246.0
+margin_bottom = 122.0
+custom_fonts/mono_font = SubResource( 1 )
+text = "
+			 Zen Time"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true

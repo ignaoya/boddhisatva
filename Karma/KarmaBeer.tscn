@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/Karma/Beer.png" type="Texture" id=1]
+[ext_resource path="res://Karma/KarmaBeer.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 7.0
+height = 8.0
+
+[node name="KarmaBeer" type="RigidBody2D"]
+mode = 2
+physics_material_override = SubResource( 1 )
+gravity_scale = 0.0
+contacts_reported = 5
+contact_monitor = true
+linear_velocity = Vector2( 100, 100 )
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 7, 11 )
+texture = ExtResource( 1 )
+hframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8, 11 )
+shape = SubResource( 2 )
